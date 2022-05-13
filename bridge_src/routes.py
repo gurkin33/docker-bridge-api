@@ -1,11 +1,12 @@
 from flask_restful import Api
-from bridge_src.resources import Home
+from bridge_src.resources import Home, Cmd
 
 
 class RouteMaker:
 
     _routes = [
-        (Home, '/',)
+        (Home, '/',),
+        (Cmd, '/cmd',)
     ]
 
     @classmethod

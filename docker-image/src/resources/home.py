@@ -1,6 +1,8 @@
 from flask_restful import Resource
 import requests
 
+from src.bridge_conn import Conn
+
 
 class Home(Resource):
 
@@ -10,8 +12,9 @@ class Home(Resource):
 
     @classmethod
     def get(cls,):
-        req = requests.get('http://gateway.docker.internal:5001/')
-        answer = {}
-        if req.status_code == 200:
-            answer = req.json()
-        return {"Home": answer}, 200
+        conn = Conn()
+        conn.run()
+        if conn.failed():
+            return {"errors": conn.get_errors()}
+
+        return {"Home": conn.get_output()}, 200
