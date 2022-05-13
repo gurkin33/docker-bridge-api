@@ -22,6 +22,6 @@ COPY . .
 
 ENV FLASK_ENV=development
 
-EXPOSE 80
+EXPOSE 8443
 
-CMD ["flask", "run", "--host", "0.0.0.0", "--port", "9000"]
+CMD ["flask", "run", "--host", "0.0.0.0", "--port", "8443"]

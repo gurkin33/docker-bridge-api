@@ -1,4 +1,4 @@
-# Docker container bridget to host via API
+# Docker container bridge to host via API
 
 It is required, when you have to execute several commands on host PC, to manage output in container.
 

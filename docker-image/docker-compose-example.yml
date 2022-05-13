@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  replic-app:
+    container_name: replic-app
+    build: .
+    volumes:
+      - /replic-app/venv
+      - /replic-app/__pycache__
+      - /Users/alex:/replic-app
+    environment:
+      FLASK_ENV: development
+    ports:
+      - 8443:8443
