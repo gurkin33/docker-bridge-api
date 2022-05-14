@@ -1,4 +1,4 @@
-from bridge_src.resources.home import Home
 from bridge_src.resources.cmd import Cmd
+from bridge_src.resources.auth import Auth
 
-__all__ = ["Home", "Cmd"]
+__all__ = ["Cmd", "Auth"]

@@ -6,7 +6,8 @@ services:
     volumes:
       - /replic-app/venv
       - /replic-app/__pycache__
-      - /Users/alex:/replic-app
+      - /Users/alex...:/replic-app # Absolute path to docker image directory
+      - /Users/alex.../pre-shared-key.txt:/replic-app/pre-shared-key.txt # Absolute path to pre-shared-key.txt
     environment:
       FLASK_ENV: development
     ports:

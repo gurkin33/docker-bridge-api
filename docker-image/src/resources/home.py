@@ -12,9 +12,11 @@ class Home(Resource):
 
     @classmethod
     def get(cls,):
+        output = ''
         conn = Conn()
-        conn.run()
+        conn.run('ll')
         if conn.failed():
             return {"errors": conn.get_errors()}
-
-        return {"Home": conn.get_output()}, 200
+        if isinstance(conn.get_output(), dict) and conn.get_output().get('output'):
+            output = conn.get_output().get('output')
+        return {"output": output}, 200

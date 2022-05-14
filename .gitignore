@@ -2,3 +2,4 @@
 __pycache__
 venv*
 docker-image/docker-compose.yml
+/pre-shared-key.txt
