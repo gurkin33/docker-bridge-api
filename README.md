@@ -14,3 +14,10 @@ export FLASK_APP=bridge_app.py
 
 flask run --host 0.0.0.0 --port 5001
 ```
+
+## To run docker container
+
+```zsh
+cd docker-image
+docker-compose up -d
+```
