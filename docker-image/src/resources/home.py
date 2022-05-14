@@ -14,9 +14,8 @@ class Home(Resource):
     def get(cls,):
         output = ''
         conn = Conn()
-        conn.run('ll')
+        conn.run('ls -a')
         if conn.failed():
-            return {"errors": conn.get_errors()}
-        if isinstance(conn.get_output(), dict) and conn.get_output().get('output'):
-            output = conn.get_output().get('output')
-        return {"output": output}, 200
+            return {"errors": conn.get_errors()}, 400
+
+        return {"output": conn.get_output().get('out'), "error": conn.get_output().get('err')}, 200

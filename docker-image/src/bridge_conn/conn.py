@@ -57,7 +57,7 @@ class Conn:
         except Exception:
             self._errors = ['Connection error']
             return
-        print(req.status_code)
+
         if req.status_code in [401, 422] and not self._auth_try and self.auth():
             self._auth_try += 1
             self.run(cmd)
